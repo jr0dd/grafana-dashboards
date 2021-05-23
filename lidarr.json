@@ -772,13 +772,13 @@
           "format": "time_series",
           "instant": true,
           "interval": "",
-          "legendFormat": "{{quality}}",
+          "legendFormat": "{{genre}}",
           "refId": "A"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "qualities",
+      "title": "genres",
       "type": "bargauge"
     },
     {
