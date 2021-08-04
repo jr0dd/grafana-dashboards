@@ -17,7 +17,7 @@
   "gnetId": 12275,
   "graphTooltip": 0,
   "id": 260,
-  "iteration": 1627154064999,
+  "iteration": 1628092099658,
   "links": [],
   "panels": [
     {
@@ -1495,5 +1495,5 @@
   "timezone": "",
   "title": "Blackbox Exporter",
   "uid": "pn-lbTWnz",
-  "version": 3
+  "version": 4
 }
