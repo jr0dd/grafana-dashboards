@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 93,
-  "iteration": 1626629574528,
+  "iteration": 1628091905619,
   "links": [
     {
       "asDropdown": false,
@@ -63,13 +63,23 @@
             {
               "options": {
                 "0": {
+                  "index": 0,
                   "text": "down"
-                },
-                "1": {
-                  "text": "up"
                 }
               },
               "type": "value"
+            },
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "color": "semi-dark-green",
+                  "index": 1,
+                  "text": "up"
+                },
+                "to": 99999
+              },
+              "type": "range"
             }
           ],
           "thresholds": {
@@ -216,6 +226,12 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "Blocking",
+      "transformations": [
+        {
+          "id": "seriesToRows",
+          "options": {}
+        }
+      ],
       "transparent": true,
       "type": "stat"
     },
@@ -489,7 +505,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "blue",
+                "color": "semi-dark-blue",
                 "value": null
               },
               {
@@ -513,7 +529,7 @@
       "links": [],
       "maxDataPoints": 100,
       "options": {
-        "colorMode": "value",
+        "colorMode": "none",
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "auto",
@@ -550,7 +566,8 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "thresholds"
+            "fixedColor": "semi-dark-blue",
+            "mode": "fixed"
           },
           "mappings": [
             {
@@ -588,7 +605,7 @@
       "links": [],
       "maxDataPoints": 100,
       "options": {
-        "colorMode": "value",
+        "colorMode": "none",
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "horizontal",
@@ -625,7 +642,8 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "thresholds"
+            "fixedColor": "semi-dark-blue",
+            "mode": "fixed"
           },
           "mappings": [
             {
@@ -662,7 +680,7 @@
       "links": [],
       "maxDataPoints": 100,
       "options": {
-        "colorMode": "value",
+        "colorMode": "none",
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "auto",
@@ -732,7 +750,7 @@
       "links": [],
       "maxDataPoints": 100,
       "options": {
-        "colorMode": "value",
+        "colorMode": "none",
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "horizontal",
@@ -1260,7 +1278,7 @@
         "hide": 2,
         "label": null,
         "name": "blocky_url",
-        "query": "http://blocky.networking.svc.cluster.local:4000",
+        "query": "https://blocky.storage-addict.io",
         "skipUrlSync": false,
         "type": "constant"
       }
@@ -1274,5 +1292,5 @@
   "timezone": "",
   "title": "Blocky",
   "uid": "vEIa8Pm7z",
-  "version": 15
+  "version": 17
 }
