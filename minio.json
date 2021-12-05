@@ -23,8 +23,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 13502,
   "graphTooltip": 0,
-  "id": 59,
-  "iteration": 1638671367320,
+  "iteration": 1638675599768,
   "links": [
     {
       "icon": "external link",
@@ -796,10 +795,6 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
       "fieldConfig": {
         "defaults": {
           "mappings": [
@@ -861,7 +856,11 @@
       "pluginVersion": "8.3.0",
       "targets": [
         {
-          "exemplar": true,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": false,
           "expr": "count(count by (bucket) (minio_bucket_usage_total_bytes{job=\"$scrape_jobs\"}))",
           "format": "time_series",
           "instant": false,
@@ -2513,6 +2512,6 @@
   "timezone": "",
   "title": "MinIO Dashboard",
   "uid": "TgmJnqnnk",
-  "version": 2,
+  "version": 1,
   "weekStart": ""
 }
