@@ -18,11 +18,13 @@
       }
     ]
   },
-  "description": "MinIO dashboard - https://min.io/",
+  "description": "MinIO Grafana Dashboard - https://min.io/",
   "editable": true,
+  "fiscalYearStartMonth": 0,
   "gnetId": 13502,
   "graphTooltip": 0,
-  "iteration": 1630284157226,
+  "id": 59,
+  "iteration": 1638671367320,
   "links": [
     {
       "icon": "external link",
@@ -34,10 +36,13 @@
       "type": "dashboards"
     }
   ],
+  "liveNow": false,
   "panels": [
     {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -72,7 +77,6 @@
         "y": 0
       },
       "id": 1,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -90,7 +94,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "targets": [
         {
           "exemplar": true,
@@ -105,14 +109,14 @@
           "step": 60
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Uptime",
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -136,7 +140,7 @@
               }
             ]
           },
-          "unit": "decbytes"
+          "unit": "bytes"
         },
         "overrides": []
       },
@@ -147,7 +151,6 @@
         "y": 0
       },
       "id": 65,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -165,7 +168,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "targets": [
         {
           "exemplar": true,
@@ -181,14 +184,14 @@
           "step": 60
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Total S3 Traffic Inbound",
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fieldConfig": {
         "defaults": {
           "mappings": [
@@ -211,7 +214,7 @@
               }
             ]
           },
-          "unit": "decbytes"
+          "unit": "bytes"
         },
         "overrides": []
       },
@@ -238,7 +241,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "targets": [
         {
           "exemplar": true,
@@ -252,8 +255,6 @@
           "step": 300
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Current Usable Capacity",
       "type": "gauge"
     },
@@ -262,7 +263,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -289,7 +293,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -307,9 +311,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Data Usage Growth",
       "tooltip": {
         "shared": true,
@@ -318,39 +320,33 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "$$hashKey": "object:419",
-          "format": "decbytes",
-          "label": null,
+          "format": "bytes",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "$$hashKey": "object:420",
-          "format": "decbytes",
-          "label": null,
+          "format": "bytes",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -391,7 +387,7 @@
         "showUnfilled": false,
         "text": {}
       },
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "targets": [
         {
           "exemplar": true,
@@ -405,14 +401,14 @@
           "step": 300
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Object size distribution",
       "type": "bargauge"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -451,7 +447,6 @@
         "y": 0
       },
       "id": 61,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -469,7 +464,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "targets": [
         {
           "exemplar": true,
@@ -485,14 +480,14 @@
           "step": 60
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Total Open FDs",
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -516,7 +511,7 @@
               }
             ]
           },
-          "unit": "decbytes"
+          "unit": "bytes"
         },
         "overrides": []
       },
@@ -527,7 +522,6 @@
         "y": 3
       },
       "id": 64,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -545,7 +539,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "targets": [
         {
           "exemplar": true,
@@ -561,14 +555,14 @@
           "step": 60
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Total S3 Traffic Outbound",
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -607,7 +601,6 @@
         "y": 3
       },
       "id": 62,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -625,7 +618,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "targets": [
         {
           "exemplar": true,
@@ -641,14 +634,14 @@
           "step": 60
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Total Goroutines",
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -687,7 +680,6 @@
         "y": 6
       },
       "id": 53,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -705,7 +697,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "targets": [
         {
           "exemplar": true,
@@ -721,14 +713,14 @@
           "step": 60
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Total Online Servers",
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -767,7 +759,6 @@
         "y": 6
       },
       "id": 9,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -785,7 +776,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "targets": [
         {
           "exemplar": true,
@@ -801,14 +792,14 @@
           "step": 60
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Total Online Disks",
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fieldConfig": {
         "defaults": {
           "mappings": [
@@ -850,7 +841,6 @@
         "y": 6
       },
       "id": 66,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -868,7 +858,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "targets": [
         {
           "exemplar": true,
@@ -892,7 +882,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -919,7 +912,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -938,9 +931,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "S3 API Data Received Rate ",
       "tooltip": {
         "shared": true,
@@ -949,9 +940,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -959,25 +948,18 @@
         {
           "$$hashKey": "object:331",
           "format": "bytes",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "$$hashKey": "object:332",
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": false
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -988,7 +970,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1015,7 +1000,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1034,9 +1019,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "S3 API Data Sent Rate ",
       "tooltip": {
         "shared": true,
@@ -1045,9 +1028,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -1055,30 +1036,25 @@
         {
           "$$hashKey": "object:331",
           "format": "bytes",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "$$hashKey": "object:332",
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": false
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1117,7 +1093,6 @@
         "y": 8
       },
       "id": 69,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -1135,7 +1110,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "targets": [
         {
           "exemplar": true,
@@ -1151,14 +1126,14 @@
           "step": 60
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Total Offline Servers",
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1197,7 +1172,6 @@
         "y": 8
       },
       "id": 78,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -1215,7 +1189,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "targets": [
         {
           "exemplar": true,
@@ -1231,14 +1205,14 @@
           "step": 60
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Total Offline Disks",
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fieldConfig": {
         "defaults": {
           "mappings": [
@@ -1280,7 +1254,6 @@
         "y": 9
       },
       "id": 44,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -1298,7 +1271,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "targets": [
         {
           "exemplar": true,
@@ -1315,8 +1288,10 @@
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1344,7 +1319,6 @@
         "y": 10
       },
       "id": 80,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -1362,7 +1336,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "targets": [
         {
           "exemplar": true,
@@ -1377,14 +1351,14 @@
           "step": 60
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Time Since Last Heal Activity",
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1412,7 +1386,6 @@
         "y": 10
       },
       "id": 81,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -1430,7 +1403,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "targets": [
         {
           "exemplar": true,
@@ -1445,8 +1418,6 @@
           "step": 60
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Time Since Last Scan Activity",
       "type": "stat"
     },
@@ -1458,7 +1429,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1485,7 +1459,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1496,7 +1470,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum by (server,api) (rate(minio_s3_requests_total{job=\"$scrape_jobs\"}[$__rate_interval]))",
+          "expr": "sum by (server,api) (increase(minio_s3_requests_total{job=\"$scrape_jobs\"}[$__rate_interval]))",
           "interval": "1m",
           "intervalFactor": 2,
           "legendFormat": "{{server,api}}",
@@ -1504,9 +1478,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "S3 API Request Rate",
       "tooltip": {
         "shared": true,
@@ -1515,9 +1487,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -1525,25 +1495,18 @@
         {
           "$$hashKey": "object:331",
           "format": "none",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "$$hashKey": "object:332",
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": false
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -1554,7 +1517,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1581,7 +1547,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1592,7 +1558,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "rate(minio_s3_requests_errors_total{job=\"$scrape_jobs\"}[$__rate_interval])",
+          "expr": "sum by (server,api) (increase(minio_s3_requests_errors_total{job=\"$scrape_jobs\"}[$__rate_interval]))",
           "interval": "1m",
           "intervalFactor": 2,
           "legendFormat": "{{server,api}}",
@@ -1600,9 +1566,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "S3 API Request Error Rate",
       "tooltip": {
         "shared": true,
@@ -1611,9 +1575,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -1621,25 +1583,18 @@
         {
           "$$hashKey": "object:331",
           "format": "none",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "$$hashKey": "object:332",
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": false
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -1651,7 +1606,10 @@
       "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "description": "Total number of bytes received and sent among all MinIO server instances",
       "fieldConfig": {
         "defaults": {
@@ -1687,7 +1645,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1716,9 +1674,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Internode Data Transfer",
       "tooltip": {
         "shared": true,
@@ -1727,9 +1683,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -1737,25 +1691,18 @@
         {
           "$$hashKey": "object:211",
           "format": "bytes",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "$$hashKey": "object:212",
           "format": "s",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -1763,7 +1710,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1790,7 +1740,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1824,9 +1774,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Healing",
       "tooltip": {
         "shared": true,
@@ -1835,9 +1783,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -1845,25 +1791,18 @@
         {
           "$$hashKey": "object:846",
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "$$hashKey": "object:847",
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -1871,7 +1810,10 @@
       "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1898,7 +1840,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1916,9 +1858,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Node CPU Usage",
       "tooltip": {
         "shared": true,
@@ -1927,9 +1867,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -1937,25 +1875,18 @@
         {
           "$$hashKey": "object:1043",
           "format": "none",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "$$hashKey": "object:1044",
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -1963,7 +1894,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1990,7 +1924,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2008,9 +1942,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Node Memory Usage",
       "tooltip": {
         "shared": true,
@@ -2019,9 +1951,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -2029,25 +1959,18 @@
         {
           "$$hashKey": "object:1043",
           "format": "bytes",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "$$hashKey": "object:1044",
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -2055,7 +1978,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -2082,7 +2008,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2102,9 +2028,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Drive Used Capacity",
       "tooltip": {
         "shared": true,
@@ -2113,9 +2037,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -2123,25 +2045,18 @@
         {
           "$$hashKey": "object:381",
           "format": "bytes",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "$$hashKey": "object:382",
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -2149,7 +2064,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -2176,7 +2094,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2196,9 +2114,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Drives Free Inodes",
       "tooltip": {
         "shared": true,
@@ -2207,9 +2123,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -2217,25 +2131,18 @@
         {
           "$$hashKey": "object:381",
           "format": "none",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "$$hashKey": "object:382",
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -2244,10 +2151,12 @@
         "Total 10.13.1.25:9000": "blue"
       },
       "bars": true,
-      "cacheTimeout": null,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "description": "Number of online disks per MinIO Server",
       "fieldConfig": {
         "defaults": {
@@ -2283,7 +2192,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2312,9 +2221,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Node Syscalls",
       "tooltip": {
         "shared": true,
@@ -2323,9 +2230,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -2334,25 +2239,19 @@
           "$$hashKey": "object:185",
           "decimals": 0,
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
         {
           "$$hashKey": "object:186",
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -2361,10 +2260,12 @@
         "used 10.13.1.25:9000": "blue"
       },
       "bars": false,
-      "cacheTimeout": null,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -2400,7 +2301,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2418,9 +2319,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Node File Descriptors",
       "tooltip": {
         "shared": true,
@@ -2429,36 +2328,28 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "$$hashKey": "object:212",
-          "decimals": null,
           "format": "none",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
         {
           "$$hashKey": "object:213",
           "format": "none",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -2466,7 +2357,10 @@
       "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -2493,7 +2387,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.1.2",
+      "pluginVersion": "8.3.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2520,9 +2414,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Node IO",
       "tooltip": {
         "shared": true,
@@ -2531,9 +2423,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -2541,30 +2431,23 @@
         {
           "$$hashKey": "object:381",
           "format": "bytes",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "$$hashKey": "object:382",
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     }
   ],
   "refresh": "10s",
-  "schemaVersion": 30,
+  "schemaVersion": 33,
   "style": "dark",
   "tags": [
     "minio"
@@ -2572,23 +2455,18 @@
   "templating": {
     "list": [
       {
-        "allValue": null,
         "current": {
-          "selected": true,
-          "text": [
-            "minio"
-          ],
-          "value": [
-            "minio"
-          ]
+          "selected": false,
+          "text": "minio",
+          "value": "minio"
         },
-        "datasource": "Prometheus",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFA97CFB590B2093"
+        },
         "definition": "label_values(up{job=~\".*minio.*\"}, job)",
-        "description": null,
-        "error": null,
         "hide": 0,
         "includeAll": false,
-        "label": null,
         "multi": true,
         "name": "scrape_jobs",
         "options": [],
@@ -2633,7 +2511,8 @@
     ]
   },
   "timezone": "",
-  "title": "MinIO Overview",
+  "title": "MinIO Dashboard",
   "uid": "TgmJnqnnk",
-  "version": 1
+  "version": 2,
+  "weekStart": ""
 }
