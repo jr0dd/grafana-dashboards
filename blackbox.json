@@ -8,20 +8,30 @@
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
         "type": "dashboard"
       }
     ]
   },
   "description": "Prometheus Blackbox Exporter Overview",
   "editable": true,
+  "fiscalYearStartMonth": 0,
   "gnetId": 12275,
   "graphTooltip": 0,
-  "id": 260,
-  "iteration": 1628092099658,
+  "iteration": 1645030469700,
   "links": [],
+  "liveNow": false,
   "panels": [
     {
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -134,8 +144,7 @@
                 "value": "color-background"
               },
               {
-                "id": "custom.align",
-                "value": null
+                "id": "custom.align"
               },
               {
                 "id": "thresholds",
@@ -174,8 +183,7 @@
                 "value": "short"
               },
               {
-                "id": "custom.align",
-                "value": null
+                "id": "custom.align"
               }
             ]
           },
@@ -202,8 +210,7 @@
                 "value": "color-background"
               },
               {
-                "id": "custom.align",
-                "value": null
+                "id": "custom.align"
               },
               {
                 "id": "thresholds",
@@ -242,8 +249,7 @@
                 "value": 2
               },
               {
-                "id": "custom.align",
-                "value": null
+                "id": "custom.align"
               }
             ]
           },
@@ -277,6 +283,13 @@
       },
       "id": 190,
       "options": {
+        "footer": {
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
         "showHeader": true,
         "sortBy": [
           {
@@ -285,7 +298,7 @@
           }
         ]
       },
-      "pluginVersion": "8.0.5",
+      "pluginVersion": "8.3.5",
       "targets": [
         {
           "exemplar": true,
@@ -324,8 +337,6 @@
           "refId": "D"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Global status",
       "transformations": [
         {
@@ -338,54 +349,88 @@
       "type": "table"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "s"
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 14,
         "w": 24,
         "x": 0,
         "y": 9
       },
-      "hiddenSeries": false,
       "id": 138,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": false,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "null",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": [
+            "mean",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "8.0.5",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "8.3.5",
       "targets": [
         {
           "exemplar": true,
@@ -397,52 +442,15 @@
           "refId": "A"
         }
       ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
       "title": "Global Probe Duration",
-      "tooltip": {
-        "shared": true,
-        "sort": 1,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:2396",
-          "format": "s",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:2397",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      "type": "timeseries"
     },
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -456,7 +464,6 @@
       "type": "row"
     },
     {
-      "cacheTimeout": null,
       "colorBackground": true,
       "colorValue": false,
       "colors": [
@@ -464,7 +471,10 @@
         "rgba(237, 129, 40, 0.89)",
         "#299c46"
       ],
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -480,7 +490,6 @@
         "y": 24
       },
       "id": 2,
-      "interval": null,
       "links": [],
       "mappingType": 1,
       "mappingTypes": [
@@ -498,7 +507,6 @@
       "maxDataPoints": 100,
       "maxPerRow": 8,
       "nullPointMode": "connected",
-      "nullText": null,
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -510,7 +518,6 @@
           "to": "null"
         }
       ],
-      "repeat": null,
       "repeatDirection": "v",
       "sparkline": {
         "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -557,52 +564,81 @@
       "valueName": "current"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "s"
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 6,
         "w": 10,
         "x": 4,
         "y": 24
       },
-      "hiddenSeries": false,
       "id": 25,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "null",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "8.0.5",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "8.3.5",
       "targets": [
         {
           "exemplar": true,
@@ -614,97 +650,85 @@
           "refId": "B"
         }
       ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
       "title": "HTTP Duration",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:3447",
-          "format": "s",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:3448",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "s"
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 6,
         "w": 10,
         "x": 14,
         "y": 24
       },
-      "hiddenSeries": false,
       "id": 17,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "null",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "8.0.5",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "repeat": null,
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "8.3.5",
       "targets": [
         {
           "exemplar": true,
@@ -716,51 +740,10 @@
           "refId": "A"
         }
       ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
       "title": "Probe Duration",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:3663",
-          "format": "s",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:3664",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      "type": "timeseries"
     },
     {
-      "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
       "colors": [
@@ -768,7 +751,10 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "decimals": 0,
       "format": "none",
       "gauge": {
@@ -785,7 +771,6 @@
         "y": 26
       },
       "id": 20,
-      "interval": null,
       "links": [],
       "mappingType": 1,
       "mappingTypes": [
@@ -803,7 +788,6 @@
       "maxDataPoints": 100,
       "maxPerRow": 8,
       "nullPointMode": "connected",
-      "nullText": null,
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -815,7 +799,6 @@
           "to": "null"
         }
       ],
-      "repeat": null,
       "repeatDirection": "h",
       "sparkline": {
         "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -862,7 +845,6 @@
       "valueName": "current"
     },
     {
-      "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
       "colors": [
@@ -870,7 +852,10 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -886,7 +871,6 @@
         "y": 28
       },
       "id": 27,
-      "interval": null,
       "links": [],
       "mappingType": 1,
       "mappingTypes": [
@@ -903,7 +887,6 @@
       ],
       "maxDataPoints": 100,
       "nullPointMode": "connected",
-      "nullText": null,
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -948,7 +931,6 @@
       "valueName": "current"
     },
     {
-      "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": true,
       "colors": [
@@ -956,7 +938,10 @@
         "rgba(237, 129, 40, 0.89)",
         "#299c46"
       ],
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -972,7 +957,6 @@
         "y": 30
       },
       "id": 18,
-      "interval": null,
       "links": [],
       "mappingType": 1,
       "mappingTypes": [
@@ -990,7 +974,6 @@
       "maxDataPoints": 100,
       "maxPerRow": 8,
       "nullPointMode": "connected",
-      "nullText": null,
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1002,7 +985,6 @@
           "to": "null"
         }
       ],
-      "repeat": null,
       "repeatDirection": "v",
       "sparkline": {
         "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -1049,7 +1031,6 @@
       "valueName": "current"
     },
     {
-      "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": true,
       "colors": [
@@ -1057,7 +1038,10 @@
         "rgba(237, 129, 40, 0.89)",
         "#299c46"
       ],
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "decimals": 2,
       "format": "dtdurations",
       "gauge": {
@@ -1074,7 +1058,6 @@
         "y": 30
       },
       "id": 19,
-      "interval": null,
       "links": [],
       "mappingType": 1,
       "mappingTypes": [
@@ -1092,7 +1075,6 @@
       "maxDataPoints": 100,
       "maxPerRow": 8,
       "nullPointMode": "connected",
-      "nullText": null,
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1104,7 +1086,6 @@
           "to": "null"
         }
       ],
-      "repeat": null,
       "repeatDirection": "h",
       "sparkline": {
         "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -1125,7 +1106,6 @@
         }
       ],
       "thresholds": "0,1209600",
-      "timeFrom": null,
       "title": "SSL Expiry",
       "type": "grafana-singlestat-panel",
       "valueFontSize": "80%",
@@ -1152,7 +1132,6 @@
       "valueName": "current"
     },
     {
-      "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
       "colors": [
@@ -1160,7 +1139,10 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "format": "s",
       "gauge": {
         "maxValue": 100,
@@ -1176,7 +1158,6 @@
         "y": 30
       },
       "id": 23,
-      "interval": null,
       "links": [],
       "mappingType": 1,
       "mappingTypes": [
@@ -1193,7 +1174,6 @@
       ],
       "maxDataPoints": 100,
       "nullPointMode": "connected",
-      "nullText": null,
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1205,7 +1185,6 @@
           "to": "null"
         }
       ],
-      "repeat": null,
       "sparkline": {
         "fillColor": "rgba(31, 118, 189, 0.18)",
         "full": false,
@@ -1239,7 +1218,6 @@
       "valueName": "current"
     },
     {
-      "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
       "colors": [
@@ -1247,7 +1225,10 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "format": "s",
       "gauge": {
         "maxValue": 100,
@@ -1263,7 +1244,6 @@
         "y": 30
       },
       "id": 24,
-      "interval": null,
       "links": [],
       "mappingType": 1,
       "mappingTypes": [
@@ -1280,7 +1260,6 @@
       ],
       "maxDataPoints": 100,
       "nullPointMode": "connected",
-      "nullText": null,
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1292,7 +1271,6 @@
           "to": "null"
         }
       ],
-      "repeat": null,
       "repeatDirection": "h",
       "sparkline": {
         "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -1328,7 +1306,7 @@
     }
   ],
   "refresh": "10s",
-  "schemaVersion": 30,
+  "schemaVersion": 34,
   "style": "dark",
   "tags": [
     "blackbox",
@@ -1345,8 +1323,6 @@
           "text": "10s",
           "value": "10s"
         },
-        "description": null,
-        "error": null,
         "hide": 0,
         "label": "Interval",
         "name": "interval",
@@ -1428,7 +1404,6 @@
         "type": "interval"
       },
       {
-        "allValue": null,
         "current": {
           "selected": true,
           "text": [
@@ -1438,13 +1413,13 @@
             "$__all"
           ]
         },
-        "datasource": "Prometheus",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFA97CFB590B2093"
+        },
         "definition": "label_values(probe_success, target)",
-        "description": null,
-        "error": null,
         "hide": 0,
         "includeAll": true,
-        "label": null,
         "multi": true,
         "name": "target",
         "options": [],
@@ -1495,5 +1470,6 @@
   "timezone": "",
   "title": "Blackbox Exporter",
   "uid": "pn-lbTWnz",
-  "version": 4
+  "version": 1,
+  "weekStart": ""
 }
