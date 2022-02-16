@@ -8,58 +8,102 @@
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
         "type": "dashboard"
       }
     ]
   },
+  "description": "Dashboard for Speedtest Exporter https://github.com/MiguelNdeCarvalho/speedtest-exporter",
   "editable": true,
-  "gnetId": null,
+  "fiscalYearStartMonth": 0,
+  "gnetId": 13665,
   "graphTooltip": 0,
-  "id": 226,
   "links": [],
+  "liveNow": false,
   "panels": [
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
-      "fill": 1,
-      "fillGradient": 10,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "Time",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "stepAfter",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 9,
         "w": 8,
         "x": 0,
         "y": 0
       },
-      "hiddenSeries": false,
       "id": 4,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": false,
-        "max": true,
-        "min": true,
-        "rightSide": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": [
+            "mean",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "8.0.5",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "8.3.5",
       "targets": [
         {
           "expr": "speedtest_ping_latency_milliseconds",
@@ -74,91 +118,88 @@
           "refId": "B"
         }
       ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
       "title": "Ping and Jitter (ms)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:291",
-          "format": "ms",
-          "label": "Time",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:292",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "description": "",
-      "fill": 1,
-      "fillGradient": 10,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-BlYlRd"
+          },
+          "custom": {
+            "axisLabel": "Download Speed",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "Mbits"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 9,
         "w": 8,
         "x": 8,
         "y": 0
       },
-      "hiddenSeries": false,
       "id": 2,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": false,
-        "max": true,
-        "min": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": [
+            "mean",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "8.0.5",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "8.3.5",
       "targets": [
         {
           "expr": "speedtest_download_bits_per_second*10^-6",
@@ -167,91 +208,87 @@
           "refId": "A"
         }
       ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
       "title": "Download Speed (Mbits/s)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:291",
-          "format": "Mbits",
-          "label": "Download Speed",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:292",
-          "decimals": null,
-          "format": "dateTimeAsLocal",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
-      "fill": 1,
-      "fillGradient": 10,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-YlBl"
+          },
+          "custom": {
+            "axisLabel": "Upload Speed",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "Mbits"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 9,
         "w": 8,
         "x": 16,
         "y": 0
       },
-      "hiddenSeries": false,
       "id": 3,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": false,
-        "max": true,
-        "min": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": [
+            "mean",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "8.0.5",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "8.3.5",
       "targets": [
         {
           "expr": "speedtest_upload_bits_per_second*10^-6",
@@ -260,66 +297,25 @@
           "refId": "A"
         }
       ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
       "title": "Upload Speed (Mbits/s)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:291",
-          "decimals": null,
-          "format": "Mbits",
-          "label": "Upload Speed",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:292",
-          "decimals": null,
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      "type": "timeseries"
     }
   ],
   "refresh": false,
-  "schemaVersion": 30,
+  "schemaVersion": 34,
   "style": "dark",
   "tags": [],
   "templating": {
     "list": []
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-2d",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
-  "title": "Speedtest",
-  "uid": "CaxOdRW7k",
-  "version": 1
+  "title": "Speedtest Dashboard",
+  "uid": "-fs18ztMz",
+  "version": 1,
+  "weekStart": ""
 }
