@@ -23,7 +23,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 10530,
   "graphTooltip": 0,
-  "iteration": 1645132669489,
+  "iteration": 1645132955235,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -149,7 +149,7 @@
       "links": [
         {
           "title": "Errors",
-          "url": "/d/HIwbBGIZk/s-m-a-r-t-disk-monitoring-for-prometheus-errors?$__url_time_range&$__all_variables"
+          "url": "/d/HIwbBGIZk/s-m-a-r-t-errors?$__url_time_range&$__all_variables"
         }
       ],
       "mappingType": 1,
