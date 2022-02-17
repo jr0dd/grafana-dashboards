@@ -23,7 +23,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 10530,
   "graphTooltip": 0,
-  "iteration": 1645123182298,
+  "iteration": 1645132429552,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -434,22 +434,15 @@
       "pluginVersion": "8.3.5",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "exemplar": true,
           "expr": "smartmon_temperature_celsius_raw_value{ instance=~\"$instance\", disk=~\"$disk\" }",
           "format": "time_series",
           "instant": false,
-          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "{{ disk }}",
           "refId": "A"
         }
       ],
       "title": "Temperture_Gauge",
-      "transformations": [],
       "type": "bargauge"
     },
     {
@@ -478,32 +471,7 @@
             ]
           }
         },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "disk"
-            },
-            "properties": [
-              {
-                "id": "custom.width",
-                "value": 90
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "model_family"
-            },
-            "properties": [
-              {
-                "id": "custom.width",
-                "value": 153
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
         "h": 14,
@@ -521,8 +489,7 @@
           ],
           "show": false
         },
-        "showHeader": true,
-        "sortBy": []
+        "showHeader": true
       },
       "pluginVersion": "8.3.5",
       "targets": [
@@ -544,13 +511,20 @@
       "title": "Device_Info",
       "transformations": [
         {
+          "id": "merge",
+          "options": {
+            "reducers": []
+          }
+        },
+        {
           "id": "filterFieldsByName",
           "options": {
             "include": {
               "names": [
-                "disk",
+                "firmware_version",
                 "model_family",
-                "serial_number"
+                "serial_number",
+                "disk"
               ]
             }
           }
@@ -561,7 +535,6 @@
             "fields": {},
             "sort": [
               {
-                "desc": false,
                 "field": "disk"
               }
             ]
@@ -828,7 +801,7 @@
           "refId": "A"
         }
       ],
-      "title": "HDD Spin_Up_Time",
+      "title": "Spin_Up_Time",
       "type": "bargauge"
     },
     {
@@ -857,7 +830,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 6,
+        "h": 4,
         "w": 8,
         "x": 0,
         "y": 35
@@ -915,7 +888,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 6,
+        "h": 4,
         "w": 8,
         "x": 8,
         "y": 35
@@ -973,7 +946,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 6,
+        "h": 4,
         "w": 8,
         "x": 16,
         "y": 35
@@ -1139,7 +1112,7 @@
     ]
   },
   "timezone": "browser",
-  "title": "S.M.A.R.T Summary",
+  "title": "S.M.A.R.T Monitoring",
   "uid": "PkPI4xGWz",
   "version": 1,
   "weekStart": ""
