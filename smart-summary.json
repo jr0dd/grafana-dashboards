@@ -23,7 +23,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 10530,
   "graphTooltip": 0,
-  "iteration": 1645116917442,
+  "iteration": 1645123182298,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -452,6 +452,7 @@
             "mode": "thresholds"
           },
           "custom": {
+            "align": "auto",
             "displayMode": "auto",
             "filterable": false
           },
@@ -800,7 +801,7 @@
           "refId": "A"
         }
       ],
-      "title": "Spin_Up_Time",
+      "title": "HDD Spin_Up_Time",
       "type": "bargauge"
     },
     {
@@ -1082,7 +1083,7 @@
     ]
   },
   "time": {
-    "from": "now-7d",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
@@ -1111,7 +1112,7 @@
     ]
   },
   "timezone": "browser",
-  "title": "S.M.A.R.T Monitoring",
+  "title": "S.M.A.R.T Summary",
   "uid": "PkPI4xGWz",
   "version": 1,
   "weekStart": ""
