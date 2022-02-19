@@ -152,6 +152,15 @@
         }
       ],
       "title": "Reallocate_Events",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "^\\/(?<dev>.*)\\/(?<disk>.*)",
+            "renamePattern": "$2"
+          }
+        }
+      ],
       "type": "gauge"
     },
     {
@@ -210,6 +219,15 @@
         }
       ],
       "title": "Pending_Sectors",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "^\\/(?<dev>.*)\\/(?<disk>.*)",
+            "renamePattern": "$2"
+          }
+        }
+      ],
       "type": "gauge"
     },
     {
@@ -268,6 +286,15 @@
         }
       ],
       "title": "Offline_Uncorrectable_Sectors",
+            "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "^\\/(?<dev>.*)\\/(?<disk>.*)",
+            "renamePattern": "$2"
+          }
+        }
+      ],
       "type": "gauge"
     },
     {
@@ -326,6 +353,15 @@
         }
       ],
       "title": "UDMA_CRC_Errors",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "^\\/(?<dev>.*)\\/(?<disk>.*)",
+            "renamePattern": "$2"
+          }
+        }
+      ],
       "type": "gauge"
     },
     {
@@ -397,6 +433,15 @@
         }
       ],
       "title": "Seek_Error_Rate",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "^\\/(?<dev>.*)\\/(?<disk>.*)",
+            "renamePattern": "$2"
+          }
+        }
+      ],
       "type": "gauge"
     },
     {
@@ -458,7 +503,16 @@
         }
       ],
       "title": "Multi_Zone_Error_Rate",
-      "type": "bargauge"
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "^\\/(?<dev>.*)\\/(?<disk>.*)",
+            "renamePattern": "$2"
+          }
+        }
+      ],
+      "type": "gauge"
     },
     {
       "description": "Cont unsuccessful attempts to spin up to operational speed. \nCritical value indicating a mechanical problem of the motor.",
@@ -516,6 +570,15 @@
         }
       ],
       "title": "Spin_Retry_Count",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "^\\/(?<dev>.*)\\/(?<disk>.*)",
+            "renamePattern": "$2"
+          }
+        }
+      ],
       "type": "gauge"
     }
   ],
