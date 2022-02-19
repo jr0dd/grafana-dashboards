@@ -149,8 +149,13 @@
       "id": 26,
       "links": [
         {
+          "dashboard": "S.M.A.R.T Errors",
+          "includeVars": true,
+          "keepTime": true,
+          "params": "",
           "title": "Errors",
-          "url": "/d/Um0tcOf7k/s-m-a-r-t-errors?"
+          "type": "dashboard",
+          "url": "/d/HIwbBGIZk/s-m-a-r-t-errors"
         }
       ],
       "mappingType": 1,
