@@ -23,7 +23,8 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 10530,
   "graphTooltip": 0,
-  "iteration": 1645132955235,
+  "id": 71,
+  "iteration": 1645230750323,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -149,7 +150,7 @@
       "links": [
         {
           "title": "Errors",
-          "url": "/d/HIwbBGIZk/s-m-a-r-t-errors?$__url_time_range&$__all_variables"
+          "url": "/d/Um0tcOf7k/s-m-a-r-t-errors?"
         }
       ],
       "mappingType": 1,
@@ -185,9 +186,17 @@
       "tableColumn": "",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": false,
           "expr": "sum( smartmon_reallocate_nand_blk_cnt_raw_value ) +\nsum( smartmon_reallocated_sector_ct_raw_value ) +\nsum( smartmon_reallocated_event_count_raw_value ) +\nsum( smartmon_raw_read_error_rate_raw_value ) +\nsum( smartmon_current_pending_sector_raw_value ) +\nsum( smartmon_offline_uncorrectable_raw_value ) +\nsum( smartmon_udma_crc_error_count_raw_value ) +\nsum( smartmon_seek_error_rate_raw_value ) +\nsum( smartmon_spin_retry_count_raw_value ) +\nsum( smartmon_multi_zone_error_rate_raw_value )",
           "format": "time_series",
+          "instant": true,
+          "interval": "",
           "intervalFactor": 1,
+          "legendFormat": "",
           "refId": "B"
         }
       ],
@@ -202,13 +211,13 @@
           "value": "null"
         }
       ],
-      "valueName": "avg"
+      "valueName": "current"
     },
     {
-      "colorBackground": false,
+      "colorBackground": true,
       "colorValue": false,
       "colors": [
-        "#299c46",
+        "#3274D9",
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
@@ -431,7 +440,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
           "datasource": {
@@ -524,7 +533,7 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
           "datasource": {
@@ -619,7 +628,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
           "expr": "smartmon_power_on_hours_raw_value{ disk=~\"$disk\", instance=~\"$instance\" }",
@@ -679,7 +688,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": false
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
           "expr": "smartmon_power_cycle_count_raw_value{ instance=~\"$instance\", disk=~\"$disk\"}",
@@ -754,7 +763,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
           "datasource": {
@@ -817,7 +826,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
           "expr": "smartmon_spin_up_time_raw_value",
@@ -868,7 +877,7 @@
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "last"
           ],
           "fields": "",
           "values": false
@@ -876,11 +885,18 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": false
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": false,
           "expr": "smartmon_power_off_retract_count_raw_value{ instance=~\"$instance\", disk=~\"$disk\"}",
           "format": "time_series",
+          "instant": true,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "{{disk}}",
           "refId": "A"
@@ -934,7 +950,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": false
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
           "expr": "smartmon_start_stop_count_raw_value { instance=~\"$instance\", disk=~\"$disk\" }",
@@ -992,7 +1008,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": false
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
           "expr": "smartmon_load_cycle_count_raw_value{ instance=~\"$instance\", disk=~\"$disk\"}",
@@ -1140,7 +1156,7 @@
   },
   "timezone": "browser",
   "title": "S.M.A.R.T Summary",
-  "uid": "PkPI4xGWz",
+  "uid": "hcdc2df7z",
   "version": 1,
   "weekStart": ""
 }
