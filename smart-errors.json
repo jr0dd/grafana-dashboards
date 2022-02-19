@@ -23,7 +23,8 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 10531,
   "graphTooltip": 0,
-  "iteration": 1645130342798,
+  "id": 70,
+  "iteration": 1645230847270,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -82,7 +83,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": false
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
           "expr": "smartmon_raw_read_error_rate_raw_value{ instance=~\"$instance\", disk=~\"$disk\" }",
@@ -140,7 +141,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": false
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
           "expr": "smartmon_reallocated_event_count_raw_value{ instance=~\"$instance\", disk=~\"$disk\"}",
@@ -198,7 +199,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": false
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
           "expr": "smartmon_current_pending_sector_raw_value{ instance=~\"$instance\", disk=~\"$disk\"}",
@@ -256,7 +257,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": false
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
           "expr": "smartmon_offline_uncorrectable_raw_value{ instance=~\"$instance\", disk=~\"$disk\"}",
@@ -314,7 +315,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": false
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
           "expr": "smartmon_udma_crc_error_count_raw_value{ instance=~\"$instance\", disk=~\"$disk\"}",
@@ -385,7 +386,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": false
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
           "expr": "smartmon_seek_error_rate_raw_value{ instance=~\"$instance\", disk=~\"$disk\" }",
@@ -446,7 +447,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
           "expr": "smartmon_multi_zone_error_rate_raw_value{ instance=~\"$instance\", disk=~\"$disk\"}",
@@ -504,7 +505,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": false
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
           "expr": "smartmon_spin_retry_count_raw_value{ instance=~\"$instance\", disk=~\"$disk\"}",
@@ -648,7 +649,7 @@
   },
   "timezone": "browser",
   "title": "S.M.A.R.T Errors",
-  "uid": "HIwbBGIZk",
-  "version": 1,
+  "uid": "Um0tcOf7k",
+  "version": 3,
   "weekStart": ""
 }
