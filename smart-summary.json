@@ -23,8 +23,8 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 10530,
   "graphTooltip": 0,
-  "id": 71,
-  "iteration": 1645230750323,
+  "id": 36,
+  "iteration": 1645235102609,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -132,6 +132,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
+      "description": "",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -149,13 +150,9 @@
       "id": 26,
       "links": [
         {
-          "dashboard": "S.M.A.R.T Errors",
-          "includeVars": true,
-          "keepTime": true,
-          "params": "",
-          "title": "Errors",
-          "type": "dashboard",
-          "url": "/d/HIwbBGIZk/s-m-a-r-t-errors"
+          "targetBlank": false,
+          "title": "S.M.A.R.T Errors",
+          "url": "/d/Um0tcOf7k/s-m-a-r-t-errors"
         }
       ],
       "mappingType": 1,
@@ -1027,7 +1024,7 @@
       "type": "gauge"
     }
   ],
-  "refresh": false,
+  "refresh": "",
   "schemaVersion": 34,
   "style": "dark",
   "tags": [
@@ -1162,6 +1159,6 @@
   "timezone": "browser",
   "title": "S.M.A.R.T Summary",
   "uid": "hcdc2df7z",
-  "version": 1,
+  "version": 3,
   "weekStart": ""
 }
