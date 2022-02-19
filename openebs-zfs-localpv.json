@@ -17,7 +17,8 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 7845,
   "graphTooltip": 0,
-  "iteration": 1644697808261,
+  "id": 34,
+  "iteration": 1645235283005,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -42,38 +43,11 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
+            "mode": "continuous-GrYlRd"
           },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "hue",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "links": [],
+          "decimals": 2,
           "mappings": [],
+          "max": 100,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -100,18 +74,18 @@
       "id": 35,
       "links": [],
       "options": {
-        "legend": {
+        "displayMode": "basic",
+        "orientation": "vertical",
+        "reduceOptions": {
           "calcs": [
-            "mean"
+            "lastNotNull"
           ],
-          "displayMode": "table",
-          "placement": "right"
+          "fields": "",
+          "values": false
         },
-        "tooltip": {
-          "mode": "single"
-        }
+        "showUnfilled": true
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
           "datasource": {
@@ -130,7 +104,7 @@
         }
       ],
       "title": "Used Space",
-      "type": "timeseries"
+      "type": "bargauge"
     },
     {
       "collapsed": false,
@@ -1184,6 +1158,6 @@
   "timezone": "browser",
   "title": "OpenEBS / ZFS-LocalPV",
   "uid": "1cd03e8f-8869-438f-8b59-be46f5002d96",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
