@@ -24,7 +24,7 @@
   "gnetId": 10530,
   "graphTooltip": 0,
   "id": 36,
-  "iteration": 1645235102609,
+  "iteration": 1645244534779,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -329,7 +329,6 @@
               "mode": "off"
             }
           },
-          "decimals": 1,
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -386,35 +385,32 @@
         }
       ],
       "title": "Temperature_Graph",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "^\\/(?<dev>.*)\\/(?<disk>.*)",
+            "renamePattern": "$2"
+          }
+        }
+      ],
       "type": "timeseries"
     },
     {
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "thresholds"
+            "mode": "continuous-GrYlRd"
           },
-          "decimals": 1,
           "mappings": [],
-          "max": "80",
-          "min": "0",
+          "max": 75,
+          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
                 "color": "green",
-                "index": 0,
                 "value": null
-              },
-              {
-                "color": "#EAB839",
-                "index": 1,
-                "value": 32
-              },
-              {
-                "color": "red",
-                "index": 2,
-                "value": 50
               }
             ]
           },
@@ -440,7 +436,8 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "text": {}
       },
       "pluginVersion": "8.3.6",
       "targets": [
@@ -460,7 +457,15 @@
         }
       ],
       "title": "Temperture_Gauge",
-      "transformations": [],
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "^\\/(?<dev>.*)\\/(?<disk>.*)",
+            "renamePattern": "$2"
+          }
+        }
+      ],
       "type": "bargauge"
     },
     {
@@ -586,13 +591,14 @@
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
-      "description": "yellow after 1 year\nred after 1 1/2 years",
+      "description": "yellow after 1 year\nred after 4 years",
       "fieldConfig": {
         "defaults": {
           "color": {
             "mode": "continuous-GrYlRd"
           },
           "mappings": [],
+          "max": 43800,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -605,7 +611,8 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "h"
         },
         "overrides": []
       },
@@ -642,13 +649,26 @@
         }
       ],
       "title": "Power_On_Hours",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "^\\s\\/(?<dev>.*)\\/(?<disk>.*)",
+            "renamePattern": "$2"
+          }
+        }
+      ],
       "type": "bargauge"
     },
     {
       "description": "Number of times disk was turned on",
       "fieldConfig": {
         "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
           "mappings": [],
+          "max": 400,
           "thresholds": {
             "mode": "percentage",
             "steps": [
@@ -701,6 +721,15 @@
         }
       ],
       "title": "Power_Cycle_Count",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "^\\/(?<dev>.*)\\/(?<disk>.*)",
+            "renamePattern": "$2"
+          }
+        }
+      ],
       "type": "gauge"
     },
     {
@@ -724,20 +753,14 @@
             "mode": "continuous-RdYlGr"
           },
           "mappings": [],
+          "max": 100,
+          "min": 0,
           "thresholds": {
             "mode": "percentage",
             "steps": [
               {
-                "color": "red",
-                "value": null
-              },
-              {
-                "color": "orange",
-                "value": 70
-              },
-              {
                 "color": "green",
-                "value": 85
+                "value": null
               }
             ]
           },
@@ -754,11 +777,11 @@
       "id": 44,
       "links": [],
       "options": {
-        "displayMode": "gradient",
-        "orientation": "vertical",
+        "displayMode": "lcd",
+        "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "last"
           ],
           "fields": "",
           "values": false
@@ -772,9 +795,11 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "exemplar": true,
-          "expr": "smartmon_percent_lifetime_remain_raw_value{ instance=~\"$instance\", disk=~\"$disk\"}",
+          "exemplar": false,
+          "expr": "smartmon_percent_lifetime_remain_value{ instance=~\"$instance\", disk=~\"$disk\"}",
           "format": "time_series",
+          "hide": false,
+          "instant": true,
           "interval": "",
           "intervalFactor": 1,
           "legendFormat": "{{disk}}",
@@ -782,6 +807,15 @@
         }
       ],
       "title": "SSD Remaining_Lifetime",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "^\\/(?<dev>.*)\\/(?<disk>.*)",
+            "renamePattern": "$2"
+          }
+        }
+      ],
       "type": "bargauge"
     },
     {
@@ -792,6 +826,7 @@
             "mode": "continuous-GrYlRd"
           },
           "mappings": [],
+          "max": 6000,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -804,7 +839,8 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "ms"
         },
         "overrides": []
       },
@@ -840,6 +876,15 @@
         }
       ],
       "title": "HDD Spin_Up_Time",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "^\\/(?<dev>.*)\\/(?<disk>.*)",
+            "renamePattern": "$2"
+          }
+        }
+      ],
       "type": "bargauge"
     },
     {
@@ -847,6 +892,7 @@
       "fieldConfig": {
         "defaults": {
           "mappings": [],
+          "max": 1000,
           "thresholds": {
             "mode": "percentage",
             "steps": [
@@ -879,7 +925,7 @@
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "last"
+            "lastNotNull"
           ],
           "fields": "",
           "values": false
@@ -905,6 +951,15 @@
         }
       ],
       "title": "HDD Power_Off_Retract_Count",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "^\\/(?<dev>.*)\\/(?<disk>.*)",
+            "renamePattern": "$2"
+          }
+        }
+      ],
       "type": "gauge"
     },
     {
@@ -963,13 +1018,26 @@
         }
       ],
       "title": "HDD Start_Stop_Count",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "^\\/(?<dev>.*)\\/(?<disk>.*)",
+            "renamePattern": "$2"
+          }
+        }
+      ],
       "type": "gauge"
     },
     {
       "description": "Number times the head was placed in the parking area.\nMostly mobile disks.\n300000 times is intended.",
       "fieldConfig": {
         "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
           "mappings": [],
+          "max": 1500,
           "thresholds": {
             "mode": "percentage",
             "steps": [
@@ -1021,6 +1089,15 @@
         }
       ],
       "title": "HDD Load_Cycle_Count",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "^\\/(?<dev>.*)\\/(?<disk>.*)",
+            "renamePattern": "$2"
+          }
+        }
+      ],
       "type": "gauge"
     }
   ],
@@ -1159,6 +1236,6 @@
   "timezone": "browser",
   "title": "S.M.A.R.T Summary",
   "uid": "hcdc2df7z",
-  "version": 3,
+  "version": 6,
   "weekStart": ""
 }
