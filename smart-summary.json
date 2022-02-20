@@ -23,8 +23,8 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 10530,
   "graphTooltip": 0,
-  "id": 36,
-  "iteration": 1645244534779,
+  "id": 25,
+  "iteration": 1645379194254,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -45,14 +45,10 @@
       "colorBackground": true,
       "colorValue": false,
       "colors": [
-        "#299c46",
+        "#56A64B",
         "#E02F44",
         "#d44a3a"
       ],
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -73,95 +69,12 @@
       "mappingType": 1,
       "mappingTypes": [
         {
+          "$$hashKey": "object:95",
           "name": "value to text",
           "value": 1
         },
         {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "",
-      "targets": [
-        {
-          "expr": "sum(smartmon_device_smart_healthy{instance=~\"$instance\"})-sum(smartmon_device_smart_healthy{instance=~\"$instance\"})",
-          "format": "table",
-          "interval": "",
-          "intervalFactor": 2,
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "thresholds": "1",
-      "title": "Unhealthy Disks",
-      "type": "grafana-singlestat-panel",
-      "valueFontSize": "80%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "null",
-          "value": "null"
-        }
-      ],
-      "valueName": "avg"
-    },
-    {
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
-      "description": "",
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 4,
-        "y": 1
-      },
-      "id": 26,
-      "links": [
-        {
-          "targetBlank": false,
-          "title": "S.M.A.R.T Errors",
-          "url": "/d/Um0tcOf7k/s-m-a-r-t-errors"
-        }
-      ],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
+          "$$hashKey": "object:96",
           "name": "range to text",
           "value": 2
         }
@@ -193,23 +106,120 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": false,
+          "expr": "sum(smartmon_device_smart_healthy{instance=~\"$instance\"})-sum(smartmon_device_smart_healthy{instance=~\"$instance\"})",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "1",
+      "title": "Unhealthy Disks",
+      "type": "grafana-singlestat-panel",
+      "valueFontSize": "150%",
+      "valueMaps": [
+        {
+          "$$hashKey": "object:98",
+          "op": "=",
+          "text": "0",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#56A64B",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "description": "",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 4,
+        "y": 1
+      },
+      "id": 26,
+      "links": [
+        {
+          "targetBlank": false,
+          "title": "S.M.A.R.T Errors",
+          "url": "/d/Um0tcOf7k/s-m-a-r-t-errors"
+        }
+      ],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "$$hashKey": "object:52",
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "$$hashKey": "object:53",
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "pluginVersion": "8.3.6",
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "$$hashKey": "object:301",
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
           "expr": "sum( smartmon_reallocate_nand_blk_cnt_raw_value ) +\nsum( smartmon_reallocated_sector_ct_raw_value ) +\nsum( smartmon_reallocated_event_count_raw_value ) +\nsum( smartmon_raw_read_error_rate_raw_value ) +\nsum( smartmon_current_pending_sector_raw_value ) +\nsum( smartmon_offline_uncorrectable_raw_value ) +\nsum( smartmon_udma_crc_error_count_raw_value ) +\nsum( smartmon_seek_error_rate_raw_value ) +\nsum( smartmon_spin_retry_count_raw_value ) +\nsum( smartmon_multi_zone_error_rate_raw_value )",
           "format": "time_series",
-          "instant": true,
+          "instant": false,
           "interval": "",
           "intervalFactor": 1,
           "legendFormat": "",
           "refId": "B"
         }
       ],
-      "thresholds": "1,10",
+      "thresholds": "",
       "title": "Errors",
       "type": "grafana-singlestat-panel",
-      "valueFontSize": "80%",
+      "valueFontSize": "150%",
       "valueMaps": [
         {
+          "$$hashKey": "object:538",
           "op": "=",
-          "text": "N/A",
+          "text": "0",
           "value": "null"
         }
       ],
@@ -242,10 +252,12 @@
       "mappingType": 1,
       "mappingTypes": [
         {
+          "$$hashKey": "object:407",
           "name": "value to text",
           "value": 1
         },
         {
+          "$$hashKey": "object:408",
           "name": "range to text",
           "value": 2
         }
@@ -281,9 +293,10 @@
       "thresholds": "",
       "title": "Active devices",
       "type": "grafana-singlestat-panel",
-      "valueFontSize": "80%",
+      "valueFontSize": "150%",
       "valueMaps": [
         {
+          "$$hashKey": "object:410",
           "op": "=",
           "text": "N/A",
           "value": "null"
@@ -292,10 +305,6 @@
       "valueName": "current"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -375,9 +384,15 @@
       "repeatDirection": "h",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
           "expr": "avg(smartmon_temperature_celsius_raw_value{ instance=~\"$instance\", disk=~\"$disk\" }) by (instance, disk)",
           "format": "time_series",
           "hide": false,
+          "instant": false,
           "interval": "",
           "intervalFactor": 4,
           "legendFormat": "{{disk}}",
@@ -446,10 +461,10 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "exemplar": true,
+          "exemplar": false,
           "expr": "smartmon_temperature_celsius_raw_value{ instance=~\"$instance\", disk=~\"$disk\" }",
           "format": "time_series",
-          "instant": false,
+          "instant": true,
           "interval": "",
           "intervalFactor": 1,
           "legendFormat": "{{ disk }}",
@@ -587,10 +602,6 @@
       "type": "table"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
       "description": "yellow after 1 year\nred after 4 years",
       "fieldConfig": {
         "defaults": {
@@ -640,9 +651,15 @@
       "pluginVersion": "8.3.6",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": false,
           "expr": "smartmon_power_on_hours_raw_value{ disk=~\"$disk\", instance=~\"$instance\" }",
           "format": "time_series",
-          "instant": false,
+          "instant": true,
+          "interval": "",
           "intervalFactor": 2,
           "legendFormat": " {{disk}}",
           "refId": "A"
@@ -713,8 +730,15 @@
       "pluginVersion": "8.3.6",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": false,
           "expr": "smartmon_power_cycle_count_raw_value{ instance=~\"$instance\", disk=~\"$disk\"}",
           "format": "time_series",
+          "instant": true,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "{{disk}}",
           "refId": "A"
@@ -867,9 +891,15 @@
       "pluginVersion": "8.3.6",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": false,
           "expr": "smartmon_spin_up_time_raw_value",
           "format": "time_series",
-          "instant": false,
+          "instant": true,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "{{disk}}",
           "refId": "A"
@@ -967,6 +997,7 @@
       "fieldConfig": {
         "defaults": {
           "mappings": [],
+          "max": 500,
           "thresholds": {
             "mode": "percentage",
             "steps": [
@@ -1010,8 +1041,15 @@
       "pluginVersion": "8.3.6",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": false,
           "expr": "smartmon_start_stop_count_raw_value { instance=~\"$instance\", disk=~\"$disk\" }",
           "format": "time_series",
+          "instant": true,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "{{disk}}",
           "refId": "A"
@@ -1081,8 +1119,15 @@
       "pluginVersion": "8.3.6",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": false,
           "expr": "smartmon_load_cycle_count_raw_value{ instance=~\"$instance\", disk=~\"$disk\"}",
           "format": "time_series",
+          "instant": true,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "{{disk}}",
           "refId": "A"
@@ -1236,6 +1281,6 @@
   "timezone": "browser",
   "title": "S.M.A.R.T Summary",
   "uid": "hcdc2df7z",
-  "version": 6,
+  "version": 2,
   "weekStart": ""
 }
