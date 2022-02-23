@@ -23,8 +23,8 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 10531,
   "graphTooltip": 0,
-  "id": 70,
-  "iteration": 1645230847270,
+  "id": 32,
+  "iteration": 1645628473866,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -44,22 +44,19 @@
         "defaults": {
           "mappings": [],
           "thresholds": {
-            "mode": "percentage",
+            "mode": "absolute",
             "steps": [
               {
                 "color": "green",
                 "value": null
               },
               {
-                "color": "orange",
-                "value": 50
-              },
-              {
                 "color": "red",
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "short"
         },
         "overrides": []
       },
@@ -72,6 +69,9 @@
       "id": 18,
       "links": [],
       "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -80,21 +80,36 @@
           "fields": "",
           "values": false
         },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": false
+        "textMode": "auto"
       },
       "pluginVersion": "8.3.6",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": false,
           "expr": "smartmon_raw_read_error_rate_raw_value{ instance=~\"$instance\", disk=~\"$disk\" }",
           "format": "time_series",
+          "instant": true,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "{{disk}}",
           "refId": "A"
         }
       ],
       "title": "Read_Error_Rate",
-      "type": "gauge"
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "\\/(?<dev>.*)\\/(?<disk>.*)",
+            "renamePattern": "$2"
+          }
+        }
+      ],
+      "type": "stat"
     },
     {
       "description": "Number of reallocation events.\nCaused by read errors and broken sectors.",
@@ -102,22 +117,19 @@
         "defaults": {
           "mappings": [],
           "thresholds": {
-            "mode": "percentage",
+            "mode": "absolute",
             "steps": [
               {
                 "color": "green",
                 "value": null
               },
               {
-                "color": "orange",
-                "value": 50
-              },
-              {
                 "color": "red",
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "short"
         },
         "overrides": []
       },
@@ -130,22 +142,31 @@
       "id": 38,
       "links": [],
       "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "last"
           ],
           "fields": "",
           "values": false
         },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": false
+        "textMode": "auto"
       },
       "pluginVersion": "8.3.6",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": false,
           "expr": "smartmon_reallocated_event_count_raw_value{ instance=~\"$instance\", disk=~\"$disk\"}",
           "format": "time_series",
+          "instant": true,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "{{disk}}",
           "refId": "A"
@@ -161,7 +182,7 @@
           }
         }
       ],
-      "type": "gauge"
+      "type": "stat"
     },
     {
       "description": "Number of unstable sectors.\nCaused by read errors. \nWill possibly be remapped.",
@@ -169,22 +190,19 @@
         "defaults": {
           "mappings": [],
           "thresholds": {
-            "mode": "percentage",
+            "mode": "absolute",
             "steps": [
               {
                 "color": "green",
                 "value": null
               },
               {
-                "color": "orange",
-                "value": 50
-              },
-              {
                 "color": "red",
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "short"
         },
         "overrides": []
       },
@@ -197,6 +215,9 @@
       "id": 39,
       "links": [],
       "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -205,14 +226,20 @@
           "fields": "",
           "values": false
         },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": false
+        "textMode": "auto"
       },
       "pluginVersion": "8.3.6",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": false,
           "expr": "smartmon_current_pending_sector_raw_value{ instance=~\"$instance\", disk=~\"$disk\"}",
           "format": "time_series",
+          "instant": true,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "{{disk}}",
           "refId": "A"
@@ -228,7 +255,7 @@
           }
         }
       ],
-      "type": "gauge"
+      "type": "stat"
     },
     {
       "description": "Number of uncorrectable sectors.\nDetected by a self-test (called offline scan)",
@@ -236,22 +263,19 @@
         "defaults": {
           "mappings": [],
           "thresholds": {
-            "mode": "percentage",
+            "mode": "absolute",
             "steps": [
               {
                 "color": "green",
                 "value": null
               },
               {
-                "color": "orange",
-                "value": 70
-              },
-              {
                 "color": "red",
-                "value": 85
+                "value": 80
               }
             ]
-          }
+          },
+          "unit": "short"
         },
         "overrides": []
       },
@@ -264,6 +288,9 @@
       "id": 40,
       "links": [],
       "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -272,21 +299,27 @@
           "fields": "",
           "values": false
         },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": false
+        "textMode": "auto"
       },
       "pluginVersion": "8.3.6",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": false,
           "expr": "smartmon_offline_uncorrectable_raw_value{ instance=~\"$instance\", disk=~\"$disk\"}",
           "format": "time_series",
+          "instant": true,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "{{disk}}",
           "refId": "A"
         }
       ],
       "title": "Offline_Uncorrectable_Sectors",
-            "transformations": [
+      "transformations": [
         {
           "id": "renameByRegex",
           "options": {
@@ -295,7 +328,7 @@
           }
         }
       ],
-      "type": "gauge"
+      "type": "stat"
     },
     {
       "description": "Monitors connection quality between disk and motherboard.\nIndicates bad cable connection/cables.",
@@ -303,22 +336,19 @@
         "defaults": {
           "mappings": [],
           "thresholds": {
-            "mode": "percentage",
+            "mode": "absolute",
             "steps": [
               {
                 "color": "green",
                 "value": null
               },
               {
-                "color": "orange",
-                "value": 50
-              },
-              {
                 "color": "red",
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "short"
         },
         "overrides": []
       },
@@ -331,6 +361,9 @@
       "id": 41,
       "links": [],
       "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -339,14 +372,20 @@
           "fields": "",
           "values": false
         },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": false
+        "textMode": "auto"
       },
       "pluginVersion": "8.3.6",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": false,
           "expr": "smartmon_udma_crc_error_count_raw_value{ instance=~\"$instance\", disk=~\"$disk\"}",
           "format": "time_series",
+          "instant": true,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "{{disk}}",
           "refId": "A"
@@ -362,7 +401,7 @@
           }
         }
       ],
-      "type": "gauge"
+      "type": "stat"
     },
     {
       "collapsed": false,
@@ -383,22 +422,19 @@
         "defaults": {
           "mappings": [],
           "thresholds": {
-            "mode": "percentage",
+            "mode": "absolute",
             "steps": [
               {
                 "color": "green",
                 "value": null
               },
               {
-                "color": "orange",
-                "value": 50
-              },
-              {
                 "color": "red",
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "short"
         },
         "overrides": []
       },
@@ -411,6 +447,9 @@
       "id": 28,
       "links": [],
       "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -419,14 +458,20 @@
           "fields": "",
           "values": false
         },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": false
+        "textMode": "auto"
       },
       "pluginVersion": "8.3.6",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": false,
           "expr": "smartmon_seek_error_rate_raw_value{ instance=~\"$instance\", disk=~\"$disk\" }",
           "format": "time_series",
+          "instant": true,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "{{disk}}",
           "refId": "A"
@@ -442,77 +487,7 @@
           }
         }
       ],
-      "type": "gauge"
-    },
-    {
-      "description": "Errors during write",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "percentage",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 50
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 8,
-        "x": 8,
-        "y": 14
-      },
-      "id": 42,
-      "links": [],
-      "options": {
-        "displayMode": "gradient",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showUnfilled": true
-      },
-      "pluginVersion": "8.3.6",
-      "targets": [
-        {
-          "expr": "smartmon_multi_zone_error_rate_raw_value{ instance=~\"$instance\", disk=~\"$disk\"}",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "{{disk}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Multi_Zone_Error_Rate",
-      "transformations": [
-        {
-          "id": "renameByRegex",
-          "options": {
-            "regex": "^\\/(?<dev>.*)\\/(?<disk>.*)",
-            "renamePattern": "$2"
-          }
-        }
-      ],
-      "type": "gauge"
+      "type": "stat"
     },
     {
       "description": "Cont unsuccessful attempts to spin up to operational speed. \nCritical value indicating a mechanical problem of the motor.",
@@ -520,22 +495,19 @@
         "defaults": {
           "mappings": [],
           "thresholds": {
-            "mode": "percentage",
+            "mode": "absolute",
             "steps": [
               {
                 "color": "green",
                 "value": null
               },
               {
-                "color": "orange",
-                "value": 50
-              },
-              {
                 "color": "red",
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "short"
         },
         "overrides": []
       },
@@ -548,6 +520,9 @@
       "id": 30,
       "links": [],
       "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -556,14 +531,20 @@
           "fields": "",
           "values": false
         },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": false
+        "textMode": "auto"
       },
       "pluginVersion": "8.3.6",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": false,
           "expr": "smartmon_spin_retry_count_raw_value{ instance=~\"$instance\", disk=~\"$disk\"}",
           "format": "time_series",
+          "instant": true,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "{{disk}}",
           "refId": "A"
@@ -579,7 +560,7 @@
           }
         }
       ],
-      "type": "gauge"
+      "type": "stat"
     }
   ],
   "refresh": false,
@@ -713,6 +694,6 @@
   "timezone": "browser",
   "title": "S.M.A.R.T Errors",
   "uid": "Um0tcOf7k",
-  "version": 3,
+  "version": 2,
   "weekStart": ""
 }
