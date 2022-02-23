@@ -23,8 +23,8 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 10530,
   "graphTooltip": 0,
-  "id": 25,
-  "iteration": 1645379194254,
+  "id": 33,
+  "iteration": 1645627872502,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -202,7 +202,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "sum( smartmon_reallocate_nand_blk_cnt_raw_value ) +\nsum( smartmon_reallocated_sector_ct_raw_value ) +\nsum( smartmon_reallocated_event_count_raw_value ) +\nsum( smartmon_raw_read_error_rate_raw_value ) +\nsum( smartmon_current_pending_sector_raw_value ) +\nsum( smartmon_offline_uncorrectable_raw_value ) +\nsum( smartmon_udma_crc_error_count_raw_value ) +\nsum( smartmon_seek_error_rate_raw_value ) +\nsum( smartmon_spin_retry_count_raw_value ) +\nsum( smartmon_multi_zone_error_rate_raw_value )",
+          "expr": "sum( smartmon_reallocate_nand_blk_cnt_raw_value ) +\nsum( smartmon_reallocated_sector_ct_raw_value ) +\nsum( smartmon_reallocated_event_count_raw_value ) +\nsum( smartmon_raw_read_error_rate_raw_value ) +\nsum( smartmon_current_pending_sector_raw_value ) +\nsum( smartmon_offline_uncorrectable_raw_value ) +\nsum( smartmon_udma_crc_error_count_raw_value ) +\nsum( smartmon_seek_error_rate_raw_value ) +\nsum( smartmon_spin_retry_count_raw_value )",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -685,7 +685,7 @@
             "mode": "continuous-GrYlRd"
           },
           "mappings": [],
-          "max": 400,
+          "max": 10000,
           "thresholds": {
             "mode": "percentage",
             "steps": [
@@ -921,8 +921,11 @@
       "description": "Number of unexpected power outages (no correct shutdown) \nThis kind of shutdown lowers the lifetime of a disk way more than a clean shutdown",
       "fieldConfig": {
         "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
           "mappings": [],
-          "max": 1000,
+          "max": 600000,
           "thresholds": {
             "mode": "percentage",
             "steps": [
@@ -1075,7 +1078,7 @@
             "mode": "continuous-GrYlRd"
           },
           "mappings": [],
-          "max": 1500,
+          "max": 600000,
           "thresholds": {
             "mode": "percentage",
             "steps": [
